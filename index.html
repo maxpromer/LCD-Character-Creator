@@ -7,6 +7,8 @@
 <meta name="description" content="online character designer for Liquid Crystal Display (LCD) and create code for arduino.">
 <meta name="keywords" content="lcd, lcd custom character, lcd character generator">
 <script src="js/jquery-1.11.3.min.js"></script>
+<script src="js/prism.js"></script>
+<link rel="stylesheet" href="css/prism.css" />
 <style>
 body {
 	font-family: Arial, Helvetica, sans-serif;
@@ -25,7 +27,7 @@ footer {
 	font-size: 12px;
 	font-weight: bold;
 	color: #FFF;
-	border-top: #00897B 2px solid;
+	border-top: #00443D 3px solid;
 }
 
 .content {
@@ -60,8 +62,15 @@ h2 {
 	padding-bottom: 15px;
 	float: left;
 	/* width: 50%; */
-	background: #81C784;
 	border-radius: 3px;
+}
+
+.box-char.green {
+	background: #81C784;
+}
+
+.box-char.blue {
+	background: #2196F3;
 }
 
 .dot-px {
@@ -91,9 +100,14 @@ h2 {
 	display: inline-block;
 }
 
-.high {
+.green .high {
 	background: #1B5E20;
 	border-color: #1B5E20;
+}
+
+.blue .high {
+	background: #FFF;
+	border-color: #FFF;
 }
 </style>
 </head>
@@ -101,9 +115,9 @@ h2 {
 <body>
 <article class="content">
   <h1>LCD Custom Character Generator</h1>
-  <h2>support character lcd  and create code for arduino.</h2>
+  <h2>Support character lcd  and create code for Arduino.</h2>
   <div class="main-box">
-    <div class="box-char">
+    <div class="box-char green">
       <div class="col">
         <div class="dot-px" data-x="0" data-y="0"></div>
         <div class="dot-px" data-x="0" data-y="1"></div>
@@ -179,8 +193,52 @@ h2 {
         </div>
         <div class="inline">
           <strong>Data Type</strong>
-          <label><input type="radio" id="datatype" name="datatype" value="bin" checked> Bin</label>
+          <label><input type="radio" id="datatype" name="datatype" value="bin" checked> Binary</label>
           <label><input type="radio" id="datatype" name="datatype" value="hex"> Hex</label>
+        </div>
+        <div class="inline">
+          <strong>Code</strong>
+        </div>
+        <div class="inline">
+          <pre><code class="language-c++">#include &lt;Wire.h&gt;
+#include &lt;LiquidCrystal_I2C.h&gt;
+
+// Set the LCD address to 0x27 in PCF8574 by NXP and Set to 0x3F in PCF8574A by Ti
+LiquidCrystal_I2C lcd(0x3F, 16, 2);
+
+byte hBth[8] = {
+        B00011,
+        B00010,
+        B00110,
+        B00100,
+        B00100,
+        B00110,
+        B00010,
+        B00011
+};
+
+byte SellBth[8] {
+        B11111,
+        B00000,
+        B11111,
+        B11111,
+        B11111,
+        B11111,
+        B00000,
+        B11111
+}
+
+
+void setup() {
+    lcd.begin();
+    lcd.createChar(0, newChar);
+    lcd.home();
+    lcd.write(0);
+}
+
+void loop() {
+
+}</code></pre>
         </div>
       </form>
     </div>
@@ -197,6 +255,10 @@ $(document).ready(function(e) {
 		} else {
           $(this).addClass("high");
         }
+    });
+	
+	$("[name='color']").change(function(e) {
+        $(".box-char").removeClass("green").removeClass("blue").addClass($(this).val());
     });
 });
 </script>
