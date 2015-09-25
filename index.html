@@ -6,110 +6,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="online character designer for Liquid Crystal Display (LCD) and create code for arduino.">
 <meta name="keywords" content="lcd, lcd custom character, lcd character generator">
-<script src="js/jquery-1.11.3.min.js"></script>
-<script src="js/prism.js"></script>
 <link rel="stylesheet" href="css/prism.css" />
-<style>
-body {
-	font-family: Arial, Helvetica, sans-serif;
-	padding: 0;
-	margin: 0;
-}
-
-a {
-	color: #FFF;
-}
-
-footer {
-	text-align: center;
-	padding: 20px;
-	background: #00695C;
-	font-size: 12px;
-	font-weight: bold;
-	color: #FFF;
-	border-top: #00443D 3px solid;
-}
-
-.content {
-	max-width: 1024px;
-	margin: auto;
-	padding-top: 20px;
-}
-
-h1, h2 {
-	margin: 0;
-	margin-bottom: 15px;
-}
-
-h1 {
-	font-size:36px;
-	color: #333;
-}
-
-h2 {
-	font-size: 24px;
-	color: #666;
-}
-
-.main-box {
-	display: table;
-	width: 100%;
-	margin: 40px 0;
-}
-
-.box-char {
-	padding: 20px;
-	padding-bottom: 15px;
-	float: left;
-	/* width: 50%; */
-	border-radius: 3px;
-}
-
-.box-char.green {
-	background: #81C784;
-}
-
-.box-char.blue {
-	background: #2196F3;
-}
-
-.dot-px {
-	width: 32px;
-	height: 32px;
-	/* margin: 2px; */
-	border: #FFF 1px solid;
-	display: inline-block;
-}
-
-.config {
-	float: left;
-	margin-left: 15px;
-}
-
-.config strong {
-	width: 160px;
-	display: inline-block;
-}
-
-.config .inline {
-	margin-bottom: 8px;
-}
-
-.config label {
-	width: 120px;
-	display: inline-block;
-}
-
-.green .high {
-	background: #1B5E20;
-	border-color: #1B5E20;
-}
-
-.blue .high {
-	background: #FFF;
-	border-color: #FFF;
-}
-</style>
+<link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
@@ -117,63 +15,76 @@ h2 {
   <h1>LCD Custom Character Generator</h1>
   <h2>Support character lcd  and create code for Arduino.</h2>
   <div class="main-box">
-    <div class="box-char green">
-      <div class="col">
-        <div class="dot-px" data-x="0" data-y="0"></div>
-        <div class="dot-px" data-x="0" data-y="1"></div>
-        <div class="dot-px" data-x="0" data-y="2"></div>
-        <div class="dot-px" data-x="0" data-y="3"></div>
-        <div class="dot-px" data-x="0" data-y="4"></div>
+    <div class="box-char-pic">
+      <div class="box-char green">
+        <div class="col">
+          <div class="dot-px" data-x="0" data-y="0"></div>
+          <div class="dot-px" data-x="0" data-y="1"></div>
+          <div class="dot-px" data-x="0" data-y="2"></div>
+          <div class="dot-px" data-x="0" data-y="3"></div>
+          <div class="dot-px" data-x="0" data-y="4"></div>
+        </div>
+        <div class="col">
+          <div class="dot-px" data-x="1" data-y="0"></div>
+          <div class="dot-px" data-x="1" data-y="1"></div>
+          <div class="dot-px" data-x="1" data-y="2"></div>
+          <div class="dot-px" data-x="1" data-y="3"></div>
+          <div class="dot-px" data-x="1" data-y="4"></div>
+        </div>
+        <div class="col">
+          <div class="dot-px" data-x="2" data-y="0"></div>
+          <div class="dot-px" data-x="2" data-y="1"></div>
+          <div class="dot-px" data-x="2" data-y="2"></div>
+          <div class="dot-px" data-x="2" data-y="3"></div>
+          <div class="dot-px" data-x="2" data-y="4"></div>
+        </div>
+        <div class="col">
+          <div class="dot-px" data-x="3" data-y="0"></div>
+          <div class="dot-px" data-x="3" data-y="1"></div>
+          <div class="dot-px" data-x="3" data-y="2"></div>
+          <div class="dot-px" data-x="3" data-y="3"></div>
+          <div class="dot-px" data-x="3" data-y="4"></div>
+        </div>
+        <div class="col">
+          <div class="dot-px" data-x="4" data-y="0"></div>
+          <div class="dot-px" data-x="4" data-y="1"></div>
+          <div class="dot-px" data-x="4" data-y="2"></div>
+          <div class="dot-px" data-x="4" data-y="3"></div>
+          <div class="dot-px" data-x="4" data-y="4"></div>
+        </div>
+        <div class="col">
+          <div class="dot-px" data-x="5" data-y="0"></div>
+          <div class="dot-px" data-x="5" data-y="1"></div>
+          <div class="dot-px" data-x="5" data-y="2"></div>
+          <div class="dot-px" data-x="5" data-y="3"></div>
+          <div class="dot-px" data-x="5" data-y="4"></div>
+        </div>
+        <div class="col">
+          <div class="dot-px" data-x="6" data-y="0"></div>
+          <div class="dot-px" data-x="6" data-y="1"></div>
+          <div class="dot-px" data-x="6" data-y="2"></div>
+          <div class="dot-px" data-x="6" data-y="3"></div>
+          <div class="dot-px" data-x="6" data-y="4"></div>
+        </div>
+        <div class="col">
+          <div class="dot-px" data-x="7" data-y="0"></div>
+          <div class="dot-px" data-x="7" data-y="1"></div>
+          <div class="dot-px" data-x="7" data-y="2"></div>
+          <div class="dot-px" data-x="7" data-y="3"></div>
+          <div class="dot-px" data-x="7" data-y="4"></div>
+        </div>
       </div>
-      <div class="col">
-        <div class="dot-px" data-x="1" data-y="0"></div>
-        <div class="dot-px" data-x="1" data-y="1"></div>
-        <div class="dot-px" data-x="1" data-y="2"></div>
-        <div class="dot-px" data-x="1" data-y="3"></div>
-        <div class="dot-px" data-x="1" data-y="4"></div>
+      <div class="btn-group">
+        <button type="button" id="clear">Clear</button>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <button type="button" id="invert">Invert</button>
       </div>
-      <div class="col">
-        <div class="dot-px" data-x="2" data-y="0"></div>
-        <div class="dot-px" data-x="2" data-y="1"></div>
-        <div class="dot-px" data-x="2" data-y="2"></div>
-        <div class="dot-px" data-x="2" data-y="3"></div>
-        <div class="dot-px" data-x="2" data-y="4"></div>
-      </div>
-      <div class="col">
-        <div class="dot-px" data-x="3" data-y="0"></div>
-        <div class="dot-px" data-x="3" data-y="1"></div>
-        <div class="dot-px" data-x="3" data-y="2"></div>
-        <div class="dot-px" data-x="3" data-y="3"></div>
-        <div class="dot-px" data-x="3" data-y="4"></div>
-      </div>
-      <div class="col">
-        <div class="dot-px" data-x="4" data-y="0"></div>
-        <div class="dot-px" data-x="4" data-y="1"></div>
-        <div class="dot-px" data-x="4" data-y="2"></div>
-        <div class="dot-px" data-x="4" data-y="3"></div>
-        <div class="dot-px" data-x="4" data-y="4"></div>
-      </div>
-      <div class="col">
-        <div class="dot-px" data-x="5" data-y="0"></div>
-        <div class="dot-px" data-x="5" data-y="1"></div>
-        <div class="dot-px" data-x="5" data-y="2"></div>
-        <div class="dot-px" data-x="5" data-y="3"></div>
-        <div class="dot-px" data-x="5" data-y="4"></div>
-      </div>
-      <div class="col">
-        <div class="dot-px" data-x="6" data-y="0"></div>
-        <div class="dot-px" data-x="6" data-y="1"></div>
-        <div class="dot-px" data-x="6" data-y="2"></div>
-        <div class="dot-px" data-x="6" data-y="3"></div>
-        <div class="dot-px" data-x="6" data-y="4"></div>
-      </div>
-      <div class="col">
-        <div class="dot-px" data-x="7" data-y="0"></div>
-        <div class="dot-px" data-x="7" data-y="1"></div>
-        <div class="dot-px" data-x="7" data-y="2"></div>
-        <div class="dot-px" data-x="7" data-y="3"></div>
-        <div class="dot-px" data-x="7" data-y="4"></div>
-      </div>
+      <strong>Link</strong>
+      <ul class="link-list">
+        <li><a href="img/ArduinoUnoR3LCD.png" target="_blank">Arduino LCD Circuit</a></li>
+        <li><a href="img/ArduinoUnoR3LCDI2C.png" target="_blank">Arduino LCD I2C Circuit</a></li>
+        <li><a href="https://github.com/fdebrabander/Arduino-LiquidCrystal-I2C-library" target="_blank">Arduino LCD I2C library</a></li>
+      </ul>
     </div>
     <div class="config">
       <form action="">
@@ -200,45 +111,7 @@ h2 {
           <strong>Code</strong>
         </div>
         <div class="inline">
-          <pre><code class="language-c++">#include &lt;Wire.h&gt;
-#include &lt;LiquidCrystal_I2C.h&gt;
-
-// Set the LCD address to 0x27 in PCF8574 by NXP and Set to 0x3F in PCF8574A by Ti
-LiquidCrystal_I2C lcd(0x3F, 16, 2);
-
-byte hBth[8] = {
-        B00011,
-        B00010,
-        B00110,
-        B00100,
-        B00100,
-        B00110,
-        B00010,
-        B00011
-};
-
-byte SellBth[8] {
-        B11111,
-        B00000,
-        B11111,
-        B11111,
-        B11111,
-        B11111,
-        B00000,
-        B11111
-}
-
-
-void setup() {
-    lcd.begin();
-    lcd.createChar(0, newChar);
-    lcd.home();
-    lcd.write(0);
-}
-
-void loop() {
-
-}</code></pre>
+          <pre><code class="language-cpp" id="code-box"></code></pre>
         </div>
       </form>
     </div>
@@ -247,20 +120,10 @@ void loop() {
 <footer>
   Open Source web tool By <a href="http://www.ioxhop.com/" target="_blank">IOXhop</a>
 </footer>
-<script>
-$(document).ready(function(e) {
-    $(".dot-px").click(function(e) {
-        if ($(this).attr("class").indexOf("high")>=0) {
-          $(this).removeClass("high");
-		} else {
-          $(this).addClass("high");
-        }
-    });
-	
-	$("[name='color']").change(function(e) {
-        $(".box-char").removeClass("green").removeClass("blue").addClass($(this).val());
-    });
-});
-</script>
+
+<script src="js/jquery-1.11.3.min.js"></script>
+<script src="js/prism.js"></script>
+<script src="js/app.js"></script>
+
 </body>
 </html>

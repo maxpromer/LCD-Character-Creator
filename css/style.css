@@ -1,0 +1,133 @@
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	padding: 0;
+	margin: 0;
+}
+
+a {
+	color: #FFF;
+}
+
+footer {
+	text-align: center;
+	padding: 20px;
+	background: #00695C;
+	font-size: 12px;
+	font-weight: bold;
+	color: #FFF;
+	border-top: #00443D 3px solid;
+}
+
+.content {
+	max-width: 1024px;
+	margin: auto;
+	padding-top: 20px;
+}
+
+h1, h2 {
+	margin: 0;
+	margin-bottom: 15px;
+}
+
+h1 {
+	font-size:36px;
+	color: #333;
+}
+
+h2 {
+	font-size: 24px;
+	color: #666;
+}
+
+.main-box {
+	display: table;
+	width: 100%;
+	margin: 40px 0;
+}
+
+.box-char-pic {
+	float: left;
+}
+
+.box-char {
+	padding: 20px;
+	padding-bottom: 15px;
+	border-radius: 3px;
+	margin-bottom: 15px;
+}
+
+.box-char.green {
+	background: #81C784;
+}
+
+.box-char.blue {
+	background: #2196F3;
+}
+
+.dot-px {
+	width: 32px;
+	height: 32px;
+	margin: 2px;
+	border: #FFF 1px solid;
+	display: inline-block;
+}
+
+.config {
+	float: left;
+	margin-left: 15px;
+}
+
+.config strong {
+	width: 160px;
+	display: inline-block;
+}
+
+.config .inline {
+	margin-bottom: 8px;
+}
+
+.config label {
+	width: 120px;
+	display: inline-block;
+}
+
+.green .high {
+	background: #1B5E20;
+	border-color: #1B5E20;
+}
+
+.blue .high {
+	background: #FFF;
+	border-color: #FFF;
+}
+
+.btn-group {
+	margin-bottom: 15px;
+	text-align: center;
+}
+
+.link-list a {
+	color: #00796B;
+	text-decoration: none;
+}
+
+.link-list a:hover {
+	color: #004D40;
+}
+
+button {
+	background: #26A69A;
+	padding: 6px 12px;
+	border: none;
+	border-radius: 3px;
+	color: #FFF;
+	outline: none;
+}
+
+button:hover {
+	background: #26A69A;
+}
+
+button:active {
+	background: #00897B;
+}
