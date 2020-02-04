@@ -135,16 +135,39 @@ $(document).ready(function(e) {
 	$("[name='datatype'], [name='interfacing']").change(function(e) {
         reloadData();
     });
-	
+
+	var clearElement = function(el) {
+		if (inverted) {
+			el.addClass("high");
+		} else {
+			el.removeClass("high");
+		}
+	};
+
+	var toggleElement = function(el) {
+		if (el.hasClass("high")) {
+			el.removeClass("high");
+		} else {
+			el.addClass("high");
+		}
+	};
+
+	var copyElement = function(src, dst) {
+		if (src.hasClass("high")) {
+			dst.addClass("high");
+		} else {
+			dst.removeClass("high");
+		}
+	};
+
+	var getElement = function(x, y) {
+		return $(".dot-px[data-x='" + x + "'][data-y='" + y + "']");
+	};
+
 	$("#clear").click(function(e) {
 		for (var x=0;x<=7;x++) {
 			for (var y=0;y<=4;y++) {
-				var el = $(".dot-px[data-x='" + x + "'][data-y='" + y + "']");
-				if (inverted) {
-					el.addClass("high");
-				} else {
-					el.removeClass("high");
-				}
+				clearElement(getElement(x, y));
 			}
 		}
         reloadData();
@@ -153,18 +176,77 @@ $(document).ready(function(e) {
 	$("#invert").click(function(e) {
 		for (var x=0;x<=7;x++) {
 			for (var y=0;y<=4;y++) {
-				var el = $(".dot-px[data-x='" + x + "'][data-y='" + y + "']");
-				if (el.hasClass("high")) {
-					el.removeClass("high");
-				} else {
-					el.addClass("high");
-				}
+				toggleElement(getElement(x, y));
 			}
 		}
 		reloadData();
 		inverted = !inverted;
     });
-	
+
+	$("#up").click(function(e) {
+		for (var x=1;x<=7;x++) {
+			for (var y=0;y<=4;y++) {
+				var el = getElement(x, y);
+				var prev = getElement(x - 1, y);
+				copyElement(el, prev);
+			}
+		}
+
+		for (var y=0;y<=4;y++) {
+			clearElement(getElement(7, y));
+		}
+
+		reloadData();
+	});
+
+	$("#down").click(function(e) {
+		for (var x=7;x>=0;x--) {
+			for (var y=0;y<=4;y++) {
+				var el = getElement(x, y);
+				var next = getElement(x + 1, y);
+				copyElement(el, next);
+			}
+		}
+
+		for (var y=0;y<=4;y++) {
+			clearElement(getElement(0, y));
+		}
+
+		reloadData();
+	});
+
+	$("#left").click(function(e) {
+		for (var x=0;x<=7;x++) {
+			for (var y=1;y<=4;y++) {
+				var el = getElement(x, y);
+				var prev = getElement(x, y - 1);
+				copyElement(el, prev);
+			}
+		}
+
+		for (var x=0;x<=7;x++) {
+			clearElement(getElement(x, 4));
+		}
+
+		reloadData();
+	});
+
+	$("#right").click(function(e) {
+		for (var x=0;x<=7;x++) {
+			for (var y=4;y>=0;y--) {
+				var el = getElement(x, y);
+				var next = getElement(x, y + 1);
+				copyElement(el, next);
+			}
+		}
+
+		for (var x=0;x<=7;x++) {
+			clearElement(getElement(x, 0));
+		}
+
+		reloadData();
+	});
+
 
 	$("#preview").click(function(e) {
 		$(".box-char").toggleClass("preview");
