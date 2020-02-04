@@ -146,10 +146,12 @@ $(document).ready(function(e) {
 	$("#invert").click(function(e) {
 		for (var x=0;x<=7;x++) {
 			for (var y=0;y<=4;y++) {
-				if ($(".dot-px[data-x='" + x + "'][data-y='" + y + "']").attr("class").indexOf("high")>=0)
-					$(".dot-px[data-x='" + x + "'][data-y='" + y + "']").removeClass("high");
-				else
-					$(".dot-px[data-x='" + x + "'][data-y='" + y + "']").addClass("high");
+				var el = $(".dot-px[data-x='" + x + "'][data-y='" + y + "']");
+				if (el.hasClass("high")) {
+					el.removeClass("high");
+				} else {
+					el.addClass("high");
+				}
 			}
 		}
         reloadData();
