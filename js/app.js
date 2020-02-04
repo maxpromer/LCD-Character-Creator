@@ -117,6 +117,8 @@ reloadData = function() {
 }
 
 $(document).ready(function(e) {
+	var inverted = false;
+
     $(".dot-px").click(function(e) {
         if ($(this).attr("class").indexOf("high")>=0) {
           $(this).removeClass("high");
@@ -137,7 +139,12 @@ $(document).ready(function(e) {
 	$("#clear").click(function(e) {
 		for (var x=0;x<=7;x++) {
 			for (var y=0;y<=4;y++) {
-				$(".dot-px[data-x='" + x + "'][data-y='" + y + "']").removeClass("high");
+				var el = $(".dot-px[data-x='" + x + "'][data-y='" + y + "']");
+				if (inverted) {
+					el.addClass("high");
+				} else {
+					el.removeClass("high");
+				}
 			}
 		}
         reloadData();
@@ -155,6 +162,7 @@ $(document).ready(function(e) {
 			}
 		}
 		reloadData();
+		inverted = !inverted;
     });
 	
 
