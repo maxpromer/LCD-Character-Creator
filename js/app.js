@@ -155,5 +155,10 @@ $(document).ready(function(e) {
         reloadData();
     });
 	
+
+	$("#preview").click(function(e) {
+		$(".box-char").toggleClass("preview");
+	});
+
 	reloadData();
 });
