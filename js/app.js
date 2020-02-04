@@ -140,7 +140,7 @@ $(document).ready(function(e) {
 				$(".dot-px[data-x='" + x + "'][data-y='" + y + "']").removeClass("high");
 			}
 		}
-        reloadData();;
+        reloadData();
     });
 	
 	$("#invert").click(function(e) {
@@ -152,7 +152,7 @@ $(document).ready(function(e) {
 					$(".dot-px[data-x='" + x + "'][data-y='" + y + "']").addClass("high");
 			}
 		}
-        reloadData();;
+        reloadData();
     });
 	
 	reloadData();
