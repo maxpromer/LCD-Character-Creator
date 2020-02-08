@@ -70,6 +70,18 @@ h2 {
 	margin: 2px;
 	border: #FFF 1px solid;
 	display: inline-block;
+	cursor: pointer;
+}
+
+.preview.box-char {
+	font-size: 5px;
+}
+
+.preview .dot-px {
+	border: rgba(0,0,0,.1) 1px solid;
+	margin: 0;
+	width: 5px;
+	height: 5px;
 }
 
 .config {
